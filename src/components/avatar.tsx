@@ -16,6 +16,7 @@ export default function Avatar({
       width={size}
       height={size}
       style={{ borderRadius: "50%" }}
+      unoptimized={true}
     />
   );
 }
