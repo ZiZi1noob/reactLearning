@@ -1,10 +1,12 @@
 import Avatar from "@/components/avatar";
 
+
 export default function ScientistProfile({
   scientist,
 }: {
   scientist: {
     name: string;
+    isMale: boolean;
     imageId: string;
     profession: string;
     awards: string;
@@ -13,8 +15,10 @@ export default function ScientistProfile({
 }) {
   return (
     <div>
-      <ScientistCardGb>
-        <h1>{scientist.name}</h1>
+      <ScientistCardBg>
+        <h1>
+          {scientist.name} {!scientist.isMale && <>👩</>}
+        </h1>
         <br></br>
         <Avatar person={scientist} size={150} />
         <br></br>
@@ -24,12 +28,12 @@ export default function ScientistProfile({
           <li>Awards: {scientist.awards}</li>
           <li>Discovered: {scientist.discovered}</li>
         </ul>
-      </ScientistCardGb>
+      </ScientistCardBg>
     </div>
   );
 }
 
-function ScientistCardGb({ children }: { children: React.ReactNode }) {
+function ScientistCardBg({ children }: { children: React.ReactNode }) {
   return (
     <div
       className="
@@ -42,10 +46,14 @@ function ScientistCardGb({ children }: { children: React.ReactNode }) {
         flex flex-col items-start justify-start
         transition-shadow
         hover:shadow-2xl
+           hover:translate-y-2
+                  hover:translate-x-1
+        active:scale-95
+        mx-8
+        my-4
       "
       style={{
         textAlign: "left",
-        // aspectRatio: "1/1", // 可以移除或根据需要调整
       }}
     >
       {children}

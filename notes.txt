@@ -26,3 +26,7 @@
 <meta>		<meta charset="UTF-8">				元数据
 <link>		<link rel="stylesheet" href="style.css">	外部资源链接
 <source>	<source src="video.mp4" type="video/mp4">	媒体源
+
+9. HTML
+ul: unordered list
+ol: ordered list
